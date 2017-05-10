@@ -71,7 +71,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Configuration
+```ruby
+Phpipam.configure do |config|
+  config.base_url = "http://my.phpipam.server/api/my_app"
+  config.username = "username"
+  config.password = "password"
+end
+```
+
+### Authenticating
+```ruby
+Phpipam.authenticate
+```
 
 ## Development
 
