@@ -6,7 +6,7 @@ TODO: Delete this and the text above, and describe your gem
 
 ## Pending API endpoints
 
-### Controller Addresses
+### Addresses Endpoints
 ```
 GET /api/my_app/addresses/{id}/                         Returns specific address
 GET /api/my_app/addresses/{id}/ping/                    Checks address status
@@ -28,7 +28,7 @@ DELETE /api/my_app/addresses/{id}/                      Deletes address
 DELETE /api/my_app/addresses/{ip}/{subnetId}/           Deletes address by IP in specific subnet
 ```
 
-### Controller Subnets
+### Subnets Endpoints
 ```
 GET /api/my_app/subnets/{id}/first_free/              Returns first available IP address in subnet 1.3
 GET /api/my_app/subnets/{id}/slaves/                  Returns all immediate slave subnets
@@ -51,6 +51,18 @@ PATCH /api/my_app/subnets/{id}/permissions/           Sets subnet permissions (?
 DELETE /api/my_app/subnets/{id}/                      Deletes Subnet
 DELETE /api/my_app/subnets/{id}/truncate/             Removes all addresses from subnet
 DELETE /api/my_app/subnets/{id}/permissions/          Removes all permissions 1.3
+```
+
+### Sections Endpoints
+```
+GET /api/my_app/sections/{name}/          Returns specific section by name
+GET /api/my_app/sections/custom_fields/   Returns custom section fields
+
+POST /api/my_app/sections/                Creates new section
+
+PATCH /api/my_app/sections/               Updates section
+
+DELETE  /api/my_app/sections/             Deletes section with all belonging subnets and addresses
 ```
 
 ## Installation
