@@ -11,6 +11,7 @@ require "phpipam/query"
 # API Libraries
 require "phpipam/address"
 require "phpipam/subnet"
+require "phpipam/section"
 
 module Phpipam
   class << self
