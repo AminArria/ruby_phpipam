@@ -1,3 +1,5 @@
+require 'httparty'
+
 require "phpipam/version"
 require "phpipam/configuration"
 require "phpipam/authentication"

@@ -1,5 +1,3 @@
-require 'httparty'
-
 module Phpipam
   class Authentication
     def self.authenticate
