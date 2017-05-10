@@ -54,6 +54,13 @@ module Phpipam
 
     def addresses
       data = Phpipam::Query.get("/subnets/#{id}/addresses/")
+
+      addrs = []
+      data.each do |addr|
+        addrs << Phpipam::Address.new(addr)
+      end
+
+      return addrs
     end
   end
 end
