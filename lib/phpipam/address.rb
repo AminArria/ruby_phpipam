@@ -25,13 +25,7 @@ module Phpipam
     end
 
     def self.get(id)
-      response = HTTParty.get(Phpipam.gen_url("/addresses/#{id}/"),
-          headers: {token: Phpipam.token}
-        )
-
-      body = JSON.parse(response.body, symbolize_names: true)
-
-      Address.new(body[:data])
+      Address.new(Phpipam::Query.get("/addresses/#{id}/"))
     end
   end
 end

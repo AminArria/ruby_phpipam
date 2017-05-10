@@ -38,28 +38,22 @@ module Phpipam
     end
 
     def self.get(id)
-      response = HTTParty.get(Phpipam.gen_url("/subnets/#{id}/"),
-          headers: {token: Phpipam.token}
-        )
-
-      body = JSON.parse(response.body, symbolize_names: true)
-
-      Subnet.new(body[:data])
+      Subnet.new(Phpipam::Query.get("/subnets/#{id}/"))
     end
 
     def usage
-      response = HTTParty.get(Phpipam.gen_url("/subnets/#{id}/usage/"),
-          headers: {token: Phpipam.token}
-        )
+      data = Phpipam::Query.get("/subnets/#{id}/usage/")
 
-      body = JSON.parse(response.body, symbolize_names: true)
-
-      @used = body[:data][:used]
-      @maxhosts = body[:data][:maxhosts]
-      @freehosts = body[:data][:freehosts]
-      @freehosts_percent = body[:data][:freehosts_percent]
+      @used = data[:used]
+      @maxhosts = data[:maxhosts]
+      @freehosts = data[:freehosts]
+      @freehosts_percent = data[:freehosts_percent]
 
       return self
+    end
+
+    def addresses
+      data = Phpipam::Query.get("/subnets/#{id}/addresses/")
     end
   end
 end
