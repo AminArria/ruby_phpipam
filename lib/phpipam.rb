@@ -4,6 +4,8 @@ require "phpipam/version"
 require "phpipam/configuration"
 require "phpipam/authentication"
 require "phpipam/exceptions"
+require "phpipam/address"
+require "phpipam/subnet"
 
 module Phpipam
   class << self

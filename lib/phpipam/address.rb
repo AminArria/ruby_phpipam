@@ -21,7 +21,7 @@ module Phpipam
       @note = json[:note]
       @lastSeen = json[:lastSeen] == "0000-00-00 00:00:00" ? nil : Time.strptime(json[:lastSeen], '%Y-%m-%d %H:%M:%S')
       @excludePing = json[:excludePing] == "0" ? false : true
-      @editDate = Time.strptime(json[:editDate], '%Y-%m-%d %H:%M:%S')
+      @editDate = json[:editDate].nil? ? nil : Time.strptime(json[:editDate], '%Y-%m-%d %H:%M:%S')
     end
 
     def self.get(id)
