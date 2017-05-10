@@ -4,6 +4,15 @@ Welcome to your new gem! In this directory, you'll find the files you need to be
 
 TODO: Delete this and the text above, and describe your gem
 
+## Pending
+
+### Controller Addresses
+  GET /api/my_app/addresses/{id}/ping/
+  GET /api/my_app/addresses/custom_fields/
+  GET /api/my_app/addresses/tags/
+  GET /api/my_app/addresses/tags/{id}/
+  GET /api/my_app/addresses/tags/{id}/addresses/
+
 ## Installation
 
 Add this line to your application's Gemfile:
