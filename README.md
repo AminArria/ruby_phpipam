@@ -7,11 +7,13 @@ TODO: Delete this and the text above, and describe your gem
 ## Pending
 
 ### Controller Addresses
+```
   GET /api/my_app/addresses/{id}/ping/
   GET /api/my_app/addresses/custom_fields/
   GET /api/my_app/addresses/tags/
   GET /api/my_app/addresses/tags/{id}/
   GET /api/my_app/addresses/tags/{id}/addresses/
+```
 
 ## Installation
 
