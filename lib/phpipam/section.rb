@@ -5,18 +5,18 @@ module Phpipam
                 :showVRF, :showSupernetOnly, :DNS
 
     def initialize(json)
-      @id = json[:id].to_i
+      @id = Phpipam::Helper.to_type(json[:id], :int)
       @name = json[:name]
       @description = json[:description]
-      @masterSection = json[:masterSection].to_i
-      @permissions = JSON.parse(json[:permissions])
-      @strictMode = json[:strictMode] == "0" ? false : true
+      @masterSection = Phpipam::Helper.to_type(json[:masterSection], :int)
+      @permissions = Phpipam::Helper.to_type(json[:permissions], :json)
+      @strictMode = Phpipam::Helper.to_type(json[:strictMode], :binary)
       @subnetOrdering = json[:subnetOrdering]
-      @order = json[:order].to_i
-      @editDate = json[:editDate].nil? ? nil : Time.strptime(json[:editDate], '%Y-%m-%d %H:%M:%S')
-      @showVLAN = json[:showVLAN] == "0" ? false : true
-      @showVRF = json[:showVRF] == "0" ? false : true
-      @showSupernetOnly = json[:showSupernetOnly] == "0" ? false : true
+      @order = Phpipam::Helper.to_type(json[:order], :int)
+      @editDate = Phpipam::Helper.to_type(json[:editDate], :date)
+      @showVLAN = Phpipam::Helper.to_type(json[:showVLAN], :binary)
+      @showVRF = Phpipam::Helper.to_type(json[:showVRF], :binary)
+      @showSupernetOnly = Phpipam::Helper.to_type(json[:showSupernetOnly], :binary)
       @DNS = json[:DNS]
     end
 

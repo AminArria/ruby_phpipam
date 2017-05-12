@@ -5,23 +5,23 @@ module Phpipam
                 :lastSeen, :excludePing, :editDate
 
     def initialize(json)
-      @id = json[:id].to_i
-      @subnetId = json[:subnetId].to_i
+      @id = Phpipam::Helper.to_type(json[:id], :int)
+      @subnetId = Phpipam::Helper.to_type(json[:subnetId], :int)
       @ip = json[:ip]
-      @is_gateway = json[:is_gateway] == "0" ? false : true
+      @is_gateway = Phpipam::Helper.to_type(json[:is_gateway], :binary)
       @description = json[:description]
       @hostname = json[:hostname]
       @mac = json[:mac]
       @owner = json[:owner]
-      @tag = json[:tag].to_i
-      @PTRignore = json[:PTRignore] == "0" ? false : true
-      @PTR = json[:PTR].to_i
-      @deviceId = json[:deviceId].to_i
+      @tag = Phpipam::Helper.to_type(json[:tag], :int)
+      @PTRignore = Phpipam::Helper.to_type(json[:PTRignore], :binary)
+      @PTR = Phpipam::Helper.to_type(json[:PTR], :int)
+      @deviceId = Phpipam::Helper.to_type(json[:deviceId], :int)
       @port = json[:port]
       @note = json[:note]
-      @lastSeen = json[:lastSeen] == "0000-00-00 00:00:00" ? nil : Time.strptime(json[:lastSeen], '%Y-%m-%d %H:%M:%S')
-      @excludePing = json[:excludePing] == "0" ? false : true
-      @editDate = json[:editDate].nil? ? nil : Time.strptime(json[:editDate], '%Y-%m-%d %H:%M:%S')
+      @lastSeen = Phpipam::Helper.to_type(json[:lastSeen], :date)
+      @excludePing = Phpipam::Helper.to_type(json[:excludePing], :binary)
+      @editDate = Phpipam::Helper.to_type(json[:editDate], :date)
     end
 
     def self.get(id)

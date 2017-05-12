@@ -7,6 +7,7 @@ require "phpipam/configuration"
 require "phpipam/authentication"
 require "phpipam/exceptions"
 require "phpipam/query"
+require "phpipam/helper"
 
 # API Libraries
 require "phpipam/address"

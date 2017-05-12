@@ -11,30 +11,30 @@ module Phpipam
     attr_reader :used, :maxhosts, :freehosts, :freehosts_percent
 
     def initialize(json)
-      @id = json[:id].to_i
+      @id = Phpipam::Helper.to_type(json[:id], :int)
       @subnet = json[:subnet]
-      @mask = json[:mask].to_i
+      @mask = Phpipam::Helper.to_type(json[:mask], :int)
       @description = json[:description]
-      @sectionId = json[:sectionId].to_i
-      @linked_subnet = json[:linked_subnet].to_i
-      @vlanId = json[:vlanId].to_i
-      @vrfId = json[:vrfId].to_i
-      @masterSubnetId = json[:masterSubnetId].to_i
-      @namerServerId = json[:namerServerId].to_i
-      @showName = json[:showName] == "0" ? false : true
-      @permissions = JSON.parse(json[:permissions])
-      @DNSrecursive = json[:DNSrecursive] == "0" ? false : true
-      @DNSrecords = json[:DNSrecords] == "0" ? false : true
-      @allowResquests = json[:allowResquests] == "0" ? false : true
-      @scanAgent = json[:scanAgent] == "0" ? false : true
-      @pingSubnet = json[:pingSubnet] == "0" ? false : true
-      @discoverSubnet = json[:discoverSubnet] == "0" ? false : true
-      @isFolder = json[:isFolder] == "0" ? false : true
-      @isFull = json[:isFull] == "0" ? false : true
-      @state = json[:state].to_i
-      @threshold = json[:threshold].to_i
-      @location = json[:location].to_i
-      @editDate = json[:editDate].nil? ? nil : Time.strptime(json[:editDate], '%Y-%m-%d %H:%M:%S')
+      @sectionId = Phpipam::Helper.to_type(json[:sectionId], :int)
+      @linked_subnet = Phpipam::Helper.to_type(json[:linked_subnet], :int)
+      @vlanId = Phpipam::Helper.to_type(json[:vlanId], :int)
+      @vrfId = Phpipam::Helper.to_type(json[:vrfId], :int)
+      @masterSubnetId = Phpipam::Helper.to_type(json[:masterSubnetId], :int)
+      @namerServerId = Phpipam::Helper.to_type(json[:namerServerId], :int)
+      @showName = Phpipam::Helper.to_type(json[:showName], :binary)
+      @permissions = Phpipam::Helper.to_type(json[:permissions], :json)
+      @DNSrecursive = Phpipam::Helper.to_type(json[:DNSrecursive], :binary)
+      @DNSrecords = Phpipam::Helper.to_type(json[:DNSrecords], :binary)
+      @allowResquests = Phpipam::Helper.to_type(json[:allowResquests], :binary)
+      @scanAgent = Phpipam::Helper.to_type(json[:scanAgent], :binary)
+      @pingSubnet = Phpipam::Helper.to_type(json[:pingSubnet], :binary)
+      @discoverSubnet = Phpipam::Helper.to_type(json[:discoverSubnet], :binary)
+      @isFolder = Phpipam::Helper.to_type(json[:isFolder], :binary)
+      @isFull = Phpipam::Helper.to_type(json[:isFull], :binary)
+      @state = Phpipam::Helper.to_type(json[:state], :int)
+      @threshold = Phpipam::Helper.to_type(json[:threshold], :int)
+      @location = Phpipam::Helper.to_type(json[:location], :int)
+      @editDate = Phpipam::Helper.to_type(json[:editDate], :date)
     end
 
     def self.get(id)
@@ -44,9 +44,9 @@ module Phpipam
     def usage
       data = Phpipam::Query.get("/subnets/#{id}/usage/")
 
-      @used = data[:used]
-      @maxhosts = data[:maxhosts]
-      @freehosts = data[:freehosts]
+      @used = Phpipam::Helper.to_type(data[:used], :int)
+      @maxhosts = Phpipam::Helper.to_type(data[:maxhosts], :int)
+      @freehosts = Phpipam::Helper.to_type(data[:freehosts], :int)
       @freehosts_percent = data[:freehosts_percent]
 
       return self
