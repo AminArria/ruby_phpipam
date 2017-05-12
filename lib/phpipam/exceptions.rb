@@ -5,6 +5,9 @@ module Phpipam
   # Raised when authentication fails.
   class AuthenticationFailed < Error; end
 
+  # Raised when trying to convert to a type that is not defined
+  class UndefinedType < Error; end
+
   # Raised when response success is false.
   class RequestFailed < Error
     attr_reader :code, :message
