@@ -2,30 +2,15 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/phpipam`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+**Important Note**: Currently only GET actions are going to be implemented.
 
 ## Pending API endpoints
+This are endpoints that aren't standarized into a method and a parsed response. You can still call them through ```Phpipam::Query.get(...)``` and get the raw response.
 
-### Addresses Endpoints
+### Sections Endpoints
 ```
-GET /api/my_app/addresses/{id}/                         Returns specific address
-GET /api/my_app/addresses/{id}/ping/                    Checks address status
-GET /api/my_app/addresses/{ip}/{subnetId}/              Returns address from subnet by ip address 1.3
-GET /api/my_app/addresses/search/{ip}/                  Searches for addresses in database, returns multiple if found
-GET /api/my_app/addresses/search_hostname/{hostname}/   Searches for addresses in database by hostname, returns multiple if found 1.3
-GET /api/my_app/addresses/first_free/{subnetId}/        Returns first available address (subnetId can be provided with parameters) 1.3
-GET /api/my_app/addresses/custom_fields/                Returns custom fields
-GET /api/my_app/addresses/tags/                         Returns all tags
-GET /api/my_app/addresses/tags/{id}/                    Returns specific tag
-GET /api/my_app/addresses/tags/{id}/addresses/          Returns addresses for specific tag
-
-POST /api/my_app/addresses/                             Creates new address
-POST /api/my_app/addresses/first_free/{subnetId}/       Creates new address in subnets – first available (subnetId can be provided with parameters) 1.3
-
-PATCH /api/my_app/addresses/{id}/                       Updates address
-
-DELETE /api/my_app/addresses/{id}/                      Deletes address
-DELETE /api/my_app/addresses/{ip}/{subnetId}/           Deletes address by IP in specific subnet
+GET /api/my_app/sections/{name}/          Returns specific section by name
+GET /api/my_app/sections/custom_fields/   Returns custom section fields
 ```
 
 ### Subnets Endpoints
@@ -39,30 +24,19 @@ GET /api/my_app/subnets/{id}/all_subnets/{mask}/      Returns all available subn
 GET /api/my_app/subnets/custom_fields/                Returns all subnet custom fields
 GET /api/my_app/subnets/cidr/{subnet}/                Searches for subnet in CIDR format
 GET /api/my_app/subnets/search/{subnet}/              Searches for subnet in CIDR format
-
-POST /api/my_app/subnets/                             Creates new subnet
-POST /api/my_app/subnets/{id}/first_subnet/{mask}/    Creates new child subnet inside subnet with specified mask 1.3
-
-PATCH /api/my_app/subnets/                            Updates Subnet
-PATCH /api/my_app/subnets/{id}/resize/                Resizes subnet to new mask
-PATCH /api/my_app/subnets/{id}/split/                 Splits subnet to smaller subnets
-PATCH /api/my_app/subnets/{id}/permissions/           Sets subnet permissions (?grouname1=ro&groupname2=3&43=1) 1.3
-
-DELETE /api/my_app/subnets/{id}/                      Deletes Subnet
-DELETE /api/my_app/subnets/{id}/truncate/             Removes all addresses from subnet
-DELETE /api/my_app/subnets/{id}/permissions/          Removes all permissions 1.3
 ```
 
-### Sections Endpoints
+### Addresses Endpoints
 ```
-GET /api/my_app/sections/{name}/          Returns specific section by name
-GET /api/my_app/sections/custom_fields/   Returns custom section fields
-
-POST /api/my_app/sections/                Creates new section
-
-PATCH /api/my_app/sections/               Updates section
-
-DELETE  /api/my_app/sections/             Deletes section with all belonging subnets and addresses
+GET /api/my_app/addresses/{id}/ping/                    Checks address status
+GET /api/my_app/addresses/{ip}/{subnetId}/              Returns address from subnet by ip address 1.3
+GET /api/my_app/addresses/search/{ip}/                  Searches for addresses in database, returns multiple if found
+GET /api/my_app/addresses/search_hostname/{hostname}/   Searches for addresses in database by hostname, returns multiple if found 1.3
+GET /api/my_app/addresses/first_free/{subnetId}/        Returns first available address (subnetId can be provided with parameters) 1.3
+GET /api/my_app/addresses/custom_fields/                Returns custom fields
+GET /api/my_app/addresses/tags/                         Returns all tags
+GET /api/my_app/addresses/tags/{id}/                    Returns specific tag
+GET /api/my_app/addresses/tags/{id}/addresses/          Returns addresses for specific tag
 ```
 
 ## Installation
@@ -70,16 +44,14 @@ DELETE  /api/my_app/sections/             Deletes section with all belonging sub
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ruby-phpipam'
+gem 'ruby-phpipam', git: 'git://github.com/AminArria/ruby-phpipam'
+
 ```
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
-Or install it yourself as:
-
-    $ gem install ruby-phpipam
 
 ## Usage
 
@@ -105,7 +77,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ruby-phpipam.
+Bug reports and pull requests are welcome on GitHub at https://github.com/AminArria/ruby-phpipam.
 
 
 ## License
