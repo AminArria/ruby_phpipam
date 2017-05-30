@@ -10,3 +10,7 @@
 
 # rspec failure tracking
 .rspec_status
+
+# RVM and others
+.ruby-version
+.ruby-gemset
