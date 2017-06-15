@@ -2,7 +2,7 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/phpipam`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-**Important Note**: Currently only GET actions are going to be implemented.
+**Important Note**: Currently only GET actions are going to be implemented, but feel free to make a PR for the others.
 
 ## Pending API endpoints
 This are endpoints that aren't standarized into a method and a parsed response. You can still call them through ```Phpipam::Query.get(...)``` and get the raw response.
