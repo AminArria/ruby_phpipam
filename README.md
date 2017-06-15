@@ -15,15 +15,12 @@ GET /api/my_app/sections/custom_fields/   Returns custom section fields
 
 ### Subnets Endpoints
 ```
-GET /api/my_app/subnets/{id}/first_free/              Returns first available IP address in subnet 1.3
 GET /api/my_app/subnets/{id}/slaves/                  Returns all immediate slave subnets
 GET /api/my_app/subnets/{id}/slaves_recursive/        Returns all slave subnets recursive
 GET /api/my_app/subnets/{id}/addresses/{ip}/          Returns IP address from subnet
 GET /api/my_app/subnets/{id}/first_subnet/{mask}/     Returns first available subnet within selected for mask 1.3
 GET /api/my_app/subnets/{id}/all_subnets/{mask}/      Returns all available subnets within selected for mask 1.3
 GET /api/my_app/subnets/custom_fields/                Returns all subnet custom fields
-GET /api/my_app/subnets/cidr/{subnet}/                Searches for subnet in CIDR format
-GET /api/my_app/subnets/search/{subnet}/              Searches for subnet in CIDR format
 ```
 
 ### Addresses Endpoints
@@ -67,6 +64,33 @@ end
 ### Authenticating
 ```ruby
 Phpipam.authenticate
+```
+
+### API Calls
+In here you'll see the following:
+```
+method_name()     What it does      What it returns
+```
+
+#### Section
+```
+self.get(id)      Get section by ID                   Section object
+self.get_all()    Get all sections                    Array of section objects
+subnets()         Get all subnets from the section    Array of subnet objects
+```
+
+#### Subnet
+```
+self.get(id)        Get subnet by ID                    Subnet object
+self.search(cidr)   Search for subnet by CIDR           Subnet object
+usage()             Get usage statistics for subnets    Subnet object with usage statistics
+addresses()         Get all addresses from the subnet   Array of address objects
+first_free_ip()     Get first usable IP                 String
+```
+
+#### Address
+```
+self.get(id)      Get address by ID     Address object
 ```
 
 ## Development
