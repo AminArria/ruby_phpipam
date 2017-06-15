@@ -41,6 +41,20 @@ module Phpipam
       Subnet.new(Phpipam::Query.get("/subnets/#{id}/"))
     end
 
+    def self.search(cidr)
+      unless Phpipam::Helper.validate_cidr(cidr)
+        raise WrongFormatSearch, "CIDR doesn't match CIDR format x.x.x.x/y"
+      end
+
+      base, mask = cidr.split("/")
+
+      data = Phpipam::Query.get("/subnets/cidr/#{base}/#{mask}/")
+
+      # Currently phpipam gives the resonse to this query as an array
+      # just containing the element.
+      return Subnet.new(data[0])
+    end
+
     def usage
       data = Phpipam::Query.get("/subnets/#{id}/usage/")
 
@@ -61,6 +75,12 @@ module Phpipam
       end
 
       return addrs
+    end
+
+    def first_free_ip
+      # Should this raise an exception if no address available or return nil?
+      # Currently it returns nil
+      data = Phpipam::Query.get("/subnets/#{id}/first_free/")
     end
   end
 end
