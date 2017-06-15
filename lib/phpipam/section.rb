@@ -20,8 +20,8 @@ module Phpipam
       @DNS = json[:DNS]
     end
 
-    def self.get(id)
-      Section.new(Phpipam::Query.get("/sections/#{id}/"))
+    def self.get(id_or_name)
+      Section.new(Phpipam::Query.get("/sections/#{id_or_name}/"))
     end
 
     def self.get_all

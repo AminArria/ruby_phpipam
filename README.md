@@ -9,7 +9,6 @@ This are endpoints that aren't standarized into a method and a parsed response. 
 
 ### Sections Endpoints
 ```
-GET /api/my_app/sections/{name}/          Returns specific section by name
 GET /api/my_app/sections/custom_fields/   Returns custom section fields
 ```
 
@@ -74,9 +73,9 @@ method_name()     What it does      What it returns
 
 #### Section
 ```
-self.get(id)      Get section by ID                   Section object
-self.get_all()    Get all sections                    Array of section objects
-subnets()         Get all subnets from the section    Array of subnet objects
+self.get(id_or_name)   Get section by ID or name           Section object
+self.get_all()         Get all sections                    Array of section objects
+subnets()              Get all subnets from the section    Array of subnet objects
 ```
 
 #### Subnet
