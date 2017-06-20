@@ -83,5 +83,14 @@ module Phpipam
       # Currently it returns nil
       data = Phpipam::Query.get("/subnets/#{id}/first_free/")
     end
+
+    def slaves
+      data = Phpipam::Query.get("/subnets/#{id}/slaves/")
+      return [] if data.nil?
+
+      data.map do |subnet|
+        Phpipam::Subnet.new(subnet)
+      end
+    end
   end
 end
