@@ -103,5 +103,13 @@ module Phpipam
         Phpipam::Subnet.new(subnet)
       end
     end
+
+    def first_subnet(mask)
+      Phpipam::Query.get("/subnets/#{id}/first_subnet/#{mask}/")
+    end
+
+    def all_subnets(mask)
+      Phpipam::Query.get_array("/subnets/#{id}/all_subnets/#{mask}/")
+    end
   end
 end
