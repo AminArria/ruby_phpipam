@@ -74,6 +74,14 @@ module Phpipam
       end
     end
 
+    # This will need to wait for response to the issue created
+    # https://github.com/phpipam/phpipam/issues/1217
+    # def get_address(ip)
+    #   data = Phpipam::Query.get("/subnets/#{id}/addresses/#{ip}/")
+
+    #   Phpipam::Address.new(data)
+    # end
+
     def first_free_ip
       # Should this raise an exception if no address available or return nil?
       # Currently it returns nil
