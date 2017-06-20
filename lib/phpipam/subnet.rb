@@ -87,5 +87,13 @@ module Phpipam
         Phpipam::Subnet.new(subnet)
       end
     end
+
+    def slaves_recursive
+      data = Phpipam::Query.get_array("/subnets/#{id}/slaves_recursive/")
+
+      data.map do |subnet|
+        Phpipam::Subnet.new(subnet)
+      end
+    end
   end
 end
