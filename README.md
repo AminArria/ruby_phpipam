@@ -14,11 +14,7 @@ GET /api/my_app/sections/custom_fields/   Returns custom section fields
 
 ### Subnets Endpoints
 ```
-GET /api/my_app/subnets/{id}/slaves/                  Returns all immediate slave subnets
-GET /api/my_app/subnets/{id}/slaves_recursive/        Returns all slave subnets recursive
 GET /api/my_app/subnets/{id}/addresses/{ip}/          Returns IP address from subnet
-GET /api/my_app/subnets/{id}/first_subnet/{mask}/     Returns first available subnet within selected for mask 1.3
-GET /api/my_app/subnets/{id}/all_subnets/{mask}/      Returns all available subnets within selected for mask 1.3
 GET /api/my_app/subnets/custom_fields/                Returns all subnet custom fields
 ```
 
@@ -80,11 +76,17 @@ subnets()              Get all subnets from the section    Array of subnet objec
 
 #### Subnet
 ```
-self.get(id)        Get subnet by ID                    Subnet object
-self.search(cidr)   Search for subnet by CIDR           Subnet object
-usage()             Get usage statistics for subnets    Subnet object with usage statistics
-addresses()         Get all addresses from the subnet   Array of address objects
-first_free_ip()     Get first usable IP                 String
+self.get(id)          Get subnet by ID                    Subnet object
+self.search(cidr)     Search for subnet by CIDR           Subnet object
+usage()               Get usage statistics for subnets    Subnet object with usage statistics
+addresses()           Get all addresses from the subnet   Array of address objects
+first_free_ip()       Get first usable IP                 String
+slaves()              Get inmediate slave subnets         Array of subnet objects
+slaves_recursive()    Get all slave subnets               Array of subnet objects (Includes self)
+first_subnet(mask)    Get first available subnet (CIDR)   String
+                        for given mask
+all_subnets(mask)     Get all posible subnets (CIDR)      Array of strings
+                        for given mask
 ```
 
 #### Address
