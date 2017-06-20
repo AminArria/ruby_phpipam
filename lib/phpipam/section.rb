@@ -36,15 +36,11 @@ module Phpipam
     end
 
     def subnets
-      data = Phpipam::Query.get("/sections/#{@id}/subnets/")
-      return [] if data.nil?
+      data = Phpipam::Query.get_array("/sections/#{@id}/subnets/")
 
-      subnets = []
-      data.each do |subnet|
-        subnets << Phpipam::Subnet.new(subnet)
+      data.map do |subnet|
+        Phpipam::Subnet.new(subnet)
       end
-
-      return subnets
     end
   end
 end

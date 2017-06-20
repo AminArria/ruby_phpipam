@@ -15,5 +15,12 @@ module Phpipam
 
       body[:data]
     end
+
+    def self.get_array(url)
+      data = self.get(url)
+
+      return [] if data.nil?
+      return data
+    end
   end
 end

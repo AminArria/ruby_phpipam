@@ -67,15 +67,11 @@ module Phpipam
     end
 
     def addresses
-      data = Phpipam::Query.get("/subnets/#{id}/addresses/")
-      return [] if data.nil?
+      data = Phpipam::Query.get_array("/subnets/#{id}/addresses/")
 
-      addrs = []
-      data.each do |addr|
-        addrs << Phpipam::Address.new(addr)
+      data.map do |addr|
+        Phpipam::Address.new(addr)
       end
-
-      return addrs
     end
 
     def first_free_ip
@@ -85,8 +81,7 @@ module Phpipam
     end
 
     def slaves
-      data = Phpipam::Query.get("/subnets/#{id}/slaves/")
-      return [] if data.nil?
+      data = Phpipam::Query.get_array("/subnets/#{id}/slaves/")
 
       data.map do |subnet|
         Phpipam::Subnet.new(subnet)
