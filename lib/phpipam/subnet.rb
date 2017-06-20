@@ -68,6 +68,7 @@ module Phpipam
 
     def addresses
       data = Phpipam::Query.get("/subnets/#{id}/addresses/")
+      return [] if data.nil?
 
       addrs = []
       data.each do |addr|

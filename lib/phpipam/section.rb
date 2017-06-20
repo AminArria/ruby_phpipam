@@ -37,6 +37,7 @@ module Phpipam
 
     def subnets
       data = Phpipam::Query.get("/sections/#{@id}/subnets/")
+      return [] if data.nil?
 
       subnets = []
       data.each do |subnet|
