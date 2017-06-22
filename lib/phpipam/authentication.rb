@@ -10,11 +10,10 @@ module Phpipam
           }
         )
 
-      if response.body == "Authentication failed"
-        raise AuthenticationFailed, "Authentication with given credentials failed."
-      end
-
       body = JSON.parse(response.body, symbolize_names: true)
+      unless body[:message].nil?
+        raise AuthenticationFailed, body[:message]
+      end
 
       unless body[:success]
         raise RequestFailed.new(body[:code], body[:message])
