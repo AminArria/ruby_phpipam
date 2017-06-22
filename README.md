@@ -1,8 +1,69 @@
-# Ruby::Phpipam
+# ruby-phpipam
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/phpipam`. To experiment with that code, run `bin/console` for an interactive prompt.
+**Important Note**: GET actions have highest priority for development, but feel free to make a PR for the others.
 
-**Important Note**: GET actions have highest priority, but feel free to make a PR for the others.
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'ruby-phpipam', git: 'git://github.com/AminArria/ruby-phpipam'
+
+```
+
+And then execute:
+
+    $ bundle install
+
+
+## Usage
+
+### Configuration
+```ruby
+Phpipam.configure do |config|
+  config.base_url = "http://my.phpipam.server/api/my_app"
+  config.username = "username"
+  config.password = "password"
+end
+```
+
+### Authenticating
+```ruby
+Phpipam.authenticate
+```
+
+### API Calls
+In here you'll see the following:
+```
+method_name()     What it does      What it returns
+```
+
+#### Section
+```
+self.get(id_or_name)   Get section by ID or name           Section object
+self.get_all()         Get all sections                    Array of section objects
+subnets()              Get all subnets from the section    Array of subnet objects
+```
+
+#### Subnet
+```
+self.get(id)          Get subnet by ID                    Subnet object
+self.search(cidr)     Search for subnet by CIDR           Subnet object
+usage()               Get usage statistics for subnets    Subnet object with usage statistics
+addresses()           Get all addresses from the subnet   Array of address objects
+first_free_ip()       Get first usable IP                 String
+slaves()              Get inmediate slave subnets         Array of subnet objects
+slaves_recursive()    Get all slave subnets               Array of subnet objects (Includes self)
+first_subnet(mask)    Get first available subnet (CIDR)   String
+                        for given mask
+all_subnets(mask)     Get all posible subnets (CIDR)      Array of strings
+                        for given mask
+```
+
+#### Address
+```
+self.get(id)      Get address by ID     Address object
+```
 
 ## Pending API endpoints
 This are endpoints that aren't standarized into a method and a parsed response. You can still call them through ```Phpipam::Query.get(...)``` and get the raw response.
@@ -93,69 +154,6 @@ GET     /api/my_app/devices/search/{search_string}/     Searches for devices wit
 POST    /api/my_app/devices/                            Creates new device
 PATCH   /api/my_app/devices/                            Updates device
 DELETE  /api/my_app/devices/                            Deletes device
-```
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'ruby-phpipam', git: 'git://github.com/AminArria/ruby-phpipam'
-
-```
-
-And then execute:
-
-    $ bundle install
-
-
-## Usage
-
-### Configuration
-```ruby
-Phpipam.configure do |config|
-  config.base_url = "http://my.phpipam.server/api/my_app"
-  config.username = "username"
-  config.password = "password"
-end
-```
-
-### Authenticating
-```ruby
-Phpipam.authenticate
-```
-
-### API Calls
-In here you'll see the following:
-```
-method_name()     What it does      What it returns
-```
-
-#### Section
-```
-self.get(id_or_name)   Get section by ID or name           Section object
-self.get_all()         Get all sections                    Array of section objects
-subnets()              Get all subnets from the section    Array of subnet objects
-```
-
-#### Subnet
-```
-self.get(id)          Get subnet by ID                    Subnet object
-self.search(cidr)     Search for subnet by CIDR           Subnet object
-usage()               Get usage statistics for subnets    Subnet object with usage statistics
-addresses()           Get all addresses from the subnet   Array of address objects
-first_free_ip()       Get first usable IP                 String
-slaves()              Get inmediate slave subnets         Array of subnet objects
-slaves_recursive()    Get all slave subnets               Array of subnet objects (Includes self)
-first_subnet(mask)    Get first available subnet (CIDR)   String
-                        for given mask
-all_subnets(mask)     Get all posible subnets (CIDR)      Array of strings
-                        for given mask
-```
-
-#### Address
-```
-self.get(id)      Get address by ID     Address object
 ```
 
 ## Development
