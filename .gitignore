@@ -14,3 +14,6 @@
 # RVM and others
 .ruby-version
 .ruby-gemset
+
+# dotenv file
+.env
