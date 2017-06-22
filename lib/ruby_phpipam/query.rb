@@ -1,10 +1,10 @@
-module Phpipam
+module RubyPhpipam
   class Query
     def self.get(url)
-      Phpipam.auth.validate_token!
+      RubyPhpipam.auth.validate_token!
 
-      response = HTTParty.get(Phpipam.gen_url(url),
-          headers: {token: Phpipam.auth.token}
+      response = HTTParty.get(RubyPhpipam.gen_url(url),
+          headers: {token: RubyPhpipam.auth.token}
         )
 
       body = JSON.parse(response.body, symbolize_names: true)

@@ -1,11 +1,11 @@
-module Phpipam
+module RubyPhpipam
   class Authentication
     attr_reader :token, :expires
 
     def initialize
-      response = HTTParty.post(Phpipam.gen_url("/user/"),
-          { basic_auth: { username: Phpipam.configuration.username,
-                         password: Phpipam.configuration.password
+      response = HTTParty.post(RubyPhpipam.gen_url("/user/"),
+          { basic_auth: { username: RubyPhpipam.configuration.username,
+                         password: RubyPhpipam.configuration.password
                         }
           }
         )
@@ -25,7 +25,7 @@ module Phpipam
 
     def validate_token!
       if @expires <= Time.now
-        data = Phpipam::Query.get("/user/")
+        data = RubyPhpipam::Query.get("/user/")
 
         if data[:expires] <= Time.now
           # Pending re authentication

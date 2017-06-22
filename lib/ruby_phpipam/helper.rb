@@ -1,4 +1,4 @@
-module Phpipam
+module RubyPhpipam
   class Helper
     def self.to_type(value, type)
       return nil if value.nil?

@@ -1,7 +1,7 @@
 require "spec_helper"
 
-RSpec.describe Phpipam do
+RSpec.describe RubyPhpipam do
   it "has a version number" do
-    expect(Phpipam::VERSION).not_to be nil
+    expect(RubyPhpipam::VERSION).not_to be nil
   end
 end

@@ -5,7 +5,7 @@ require 'vcr'
 require "dotenv"
 Dotenv.load
 
-require "phpipam"
+require "ruby_phpipam"
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
@@ -24,7 +24,7 @@ end
 
 # Helper methods
 def load_configuration(base_url:ENV["base_url"], username:ENV["username"], password:ENV["password"])
-  Phpipam.configure do |config|
+  RubyPhpipam.configure do |config|
     config.base_url = base_url
     config.username = username
     config.password = password

@@ -1,4 +1,4 @@
-module Phpipam
+module RubyPhpipam
   # Abstract exception
   class Error < StandardError; end
 

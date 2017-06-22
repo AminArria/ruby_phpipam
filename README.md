@@ -1,4 +1,4 @@
-# ruby-phpipam
+# ruby_phpipam
 
 **Important Note**: GET actions have highest priority for development, but feel free to make a PR for the others.
 
@@ -7,7 +7,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ruby-phpipam', git: 'git://github.com/AminArria/ruby-phpipam'
+gem 'ruby_phpipam', git: 'git://github.com/AminArria/ruby-phpipam'
 
 ```
 

@@ -1,4 +1,4 @@
-module Phpipam
+module RubyPhpipam
   class Configuration
     attr_accessor :base_url, :username, :password
 

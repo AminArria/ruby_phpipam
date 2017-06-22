@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'phpipam/version'
+require 'ruby_phpipam/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "ruby-phpipam"
-  spec.version       = Phpipam::VERSION
+  spec.name          = "ruby_phpipam"
+  spec.version       = RubyPhpipam::VERSION
   spec.authors       = ["Amin Arria"]
   spec.email         = ["arria.amin@gmail.com"]
 
-  spec.summary       = "Ruby client for phpipam API"
-  spec.description   = "Ruby client for phpipam API"
+  spec.summary       = "Ruby wrapper for the phpipam API"
+  spec.description   = "Ruby client for the phpipam API"
   spec.homepage      = "https://github.com/AminArria/ruby-phpipam"
   spec.license       = "MIT"
 

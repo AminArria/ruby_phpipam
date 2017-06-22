@@ -5,14 +5,14 @@ require "bundler/setup"
 require "dotenv"
 Dotenv.load
 
-require "phpipam"
+require "ruby_phpipam"
 
-Phpipam.configure do |config|
+RubyPhpipam.configure do |config|
   config.base_url = ENV["base_url"]
   config.username = ENV["username"]
   config.password = ENV["password"]
 end
-Phpipam.authenticate
+RubyPhpipam.authenticate
 
 require "irb"
 IRB.start(__FILE__)
