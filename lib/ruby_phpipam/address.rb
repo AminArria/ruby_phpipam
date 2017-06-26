@@ -27,5 +27,19 @@ module RubyPhpipam
     def self.get(id)
       Address.new(RubyPhpipam::Query.get("/addresses/#{id}/"))
     end
+
+    def self.ping(id)
+      response = RubyPhpipam::Query.get("/addresses/#{id}/ping/")
+
+      if response[:exit_code] == 0
+        return true
+      else
+        return false
+      end
+    end
+
+    def online?
+      RubyPhpipam::Address.ping(@id)
+    end
   end
 end
