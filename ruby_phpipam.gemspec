@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["arria.amin@gmail.com"]
 
   spec.summary       = "Ruby wrapper for the phpipam API"
-  spec.description   = "Ruby client for the phpipam API"
+  spec.description   = "Ruby wrapper for the phpipam API"
   spec.homepage      = "https://github.com/AminArria/ruby-phpipam"
   spec.license       = "MIT"
 
