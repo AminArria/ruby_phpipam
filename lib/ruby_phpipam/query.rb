@@ -9,7 +9,7 @@ module RubyPhpipam
 
       body = JSON.parse(response.body, symbolize_names: true)
 
-      unless body[:success]
+      unless body[:success] && body[:code] >= 200 && body[:code] < 400
         raise RequestFailed.new(body[:code], body[:message])
       end
 
