@@ -50,9 +50,13 @@ module RubyPhpipam
 
       data = RubyPhpipam::Query.get("/subnets/cidr/#{base}/#{mask}/")
 
-      # Currently Rubyphpipam gives the resonse to this query as an array
-      # just containing the element.
-      return Subnet.new(data[0])
+      if data.nil?
+        return nil
+      else
+        # Currently Rubyphpipam gives the resonse to this query as an array
+        # just containing the element.
+        return Subnet.new(data[0])
+      end
     end
 
     def usage
