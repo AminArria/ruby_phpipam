@@ -28,6 +28,13 @@ module RubyPhpipam
       Address.new(RubyPhpipam::Query.get("/addresses/#{id}/"))
     end
 
+    def self.get_by_tag(tagId)
+      addresses = RubyPhpipam::Query.get_array("/addresses/tags/#{tagId}/addresses/")
+      addresses.map do |address|
+        self.new(address)
+      end
+    end
+
     def self.ping(id)
       response = RubyPhpipam::Query.get("/addresses/#{id}/ping/")
 

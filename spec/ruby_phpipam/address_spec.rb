@@ -59,4 +59,25 @@ RSpec.describe RubyPhpipam::Address do
       expect(free_ip).to eq "10.10.2.1"
     end
   end
+
+  context "self.get_by_tag" do
+    it 'raises an error if tag ID does not exist', :vcr do
+      expect {
+        RubyPhpipam::Address.get_by_tag(948)
+      }.to raise_error(RubyPhpipam::RequestFailed)
+    end
+
+    it 'returns an empty array if there is no address with that tag', :vcr do
+      addresses = RubyPhpipam::Address.get_by_tag(5)
+      expect(addresses.count).to eq 0
+    end
+
+    it 'returns all addresses with that tag', :vcr do
+      addresses = RubyPhpipam::Address.get_by_tag(2)
+      addresses.each do |address|
+        expect(address).to be_an_instance_of(RubyPhpipam::Address)
+        expect(address.tag).to eq 2
+      end
+    end
+  end
 end
