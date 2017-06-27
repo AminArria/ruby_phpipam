@@ -47,4 +47,16 @@ RSpec.describe RubyPhpipam::Address do
       end
     end
   end
+
+  context "self.first_free" do
+    it 'returns nil if there is no free address in the subnet', :vcr do
+      free_ip = RubyPhpipam::Address.first_free(12)
+      expect(free_ip).to be_nil
+    end
+
+    it 'returns first free address of the subnet', :vcr do
+      free_ip = RubyPhpipam::Address.first_free(4)
+      expect(free_ip).to eq "10.10.2.1"
+    end
+  end
 end

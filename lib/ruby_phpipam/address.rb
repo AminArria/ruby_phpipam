@@ -56,6 +56,10 @@ module RubyPhpipam
       end
     end
 
+    def self.first_free(subnetId)
+      RubyPhpipam::Query.get("/addresses/first_free/#{subnetId}/")
+    end
+
     def online?
       RubyPhpipam::Address.ping(@id)
     end
