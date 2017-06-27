@@ -8,18 +8,18 @@ http_interactions:
       string: ''
     headers:
       Token:
-      - "=kx6R0w4KiKS0ogduPCmDwcG"
+      - xUjY_6V!1uD$zN.l6nsMXWGJ
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 26 Jun 2017 14:58:27 GMT
+      - Tue, 27 Jun 2017 14:43:58 GMT
       Server:
       - Apache/2.4.18 (Ubuntu)
       Set-Cookie:
-      - phpipam=8s6cspmifjksvarj89hreaeaj2; expires=Tue, 27-Jun-2017 14:58:27 GMT;
+      - phpipam=cd93h0djt0f9occsk1hmui73o7; expires=Wed, 28-Jun-2017 14:43:58 GMT;
         Max-Age=86400; path=/; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
@@ -35,7 +35,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"code":200,"success":true,"data":[{"id":"2","name":"IPv6","description":"Section
         for IPv6 addresses","masterSection":"0","permissions":"{\"3\":\"1\",\"2\":\"2\"}","strictMode":"1","subnetOrdering":null,"order":null,"editDate":null,"showVLAN":"0","showVRF":"0","showSupernetOnly":"0","DNS":null},{"id":"4","name":"Vacia","description":null,"masterSection":"0","permissions":"[]","strictMode":"1","subnetOrdering":"default","order":null,"editDate":null,"showVLAN":"1","showVRF":"1","showSupernetOnly":"1","DNS":null},{"id":"3","name":"Probando","description":null,"masterSection":"0","permissions":"[]","strictMode":"1","subnetOrdering":"default","order":null,"editDate":null,"showVLAN":"1","showVRF":"1","showSupernetOnly":"1","DNS":null},{"id":"1","name":"Customers","description":"Section
-        for customers","masterSection":"0","permissions":"{\"3\":\"1\",\"2\":\"2\"}","strictMode":"1","subnetOrdering":null,"order":null,"editDate":null,"showVLAN":"0","showVRF":"0","showSupernetOnly":"0","DNS":null}],"time":0.124}'
+        for customers","masterSection":"0","permissions":"{\"3\":\"1\",\"2\":\"2\"}","strictMode":"1","subnetOrdering":null,"order":null,"editDate":null,"showVLAN":"0","showVRF":"0","showSupernetOnly":"0","DNS":null}],"time":0.004}'
     http_version: 
-  recorded_at: Mon, 26 Jun 2017 14:58:27 GMT
+  recorded_at: Tue, 27 Jun 2017 14:43:58 GMT
 recorded_with: VCR 3.0.3

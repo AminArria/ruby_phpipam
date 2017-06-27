@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 26 Jun 2017 15:05:34 GMT
+      - Tue, 27 Jun 2017 14:43:58 GMT
       Server:
       - Apache/2.4.18 (Ubuntu)
       Set-Cookie:
-      - phpipam=8ugv0p09b4l8kf1l8vqq4k2gg5; expires=Tue, 27-Jun-2017 15:05:34 GMT;
+      - phpipam=g78npaou6pfqdfv9f0telogt35; expires=Wed, 28-Jun-2017 14:43:58 GMT;
         Max-Age=86400; path=/; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
@@ -39,10 +39,10 @@ http_interactions:
       - application/json; charset=utf-8
     body:
       encoding: UTF-8
-      string: '{"code":200,"success":true,"data":{"token":"=kx6R0w4KiKS0ogduPCmDwcG","expires":"2017-06-26
-        17:05:34"},"time":0.219}'
+      string: '{"code":200,"success":true,"data":{"token":"xUjY_6V!1uD$zN.l6nsMXWGJ","expires":"2017-06-27
+        16:43:58"},"time":0.282}'
     http_version: 
-  recorded_at: Mon, 26 Jun 2017 15:05:34 GMT
+  recorded_at: Tue, 27 Jun 2017 14:43:58 GMT
 - request:
     method: get
     uri: http://phpipam.com/api/capacidad/sections/999/
@@ -51,18 +51,18 @@ http_interactions:
       string: ''
     headers:
       Token:
-      - "=kx6R0w4KiKS0ogduPCmDwcG"
+      - xUjY_6V!1uD$zN.l6nsMXWGJ
   response:
     status:
       code: 404
       message: Not Found
     headers:
       Date:
-      - Mon, 26 Jun 2017 15:05:34 GMT
+      - Tue, 27 Jun 2017 14:43:58 GMT
       Server:
       - Apache/2.4.18 (Ubuntu)
       Set-Cookie:
-      - phpipam=td576udq1cc1a8nqncq5pj65u0; expires=Tue, 27-Jun-2017 15:05:34 GMT;
+      - phpipam=t1ofs8s0bkma8nbf19p90nc2d5; expires=Wed, 28-Jun-2017 14:43:58 GMT;
         Max-Age=86400; path=/; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
@@ -76,7 +76,7 @@ http_interactions:
       - application/json; charset=utf-8
     body:
       encoding: UTF-8
-      string: '{"code":404,"success":0,"message":"Section does not exist","time":0.007}'
+      string: '{"code":404,"success":0,"message":"Section does not exist","time":0.027}'
     http_version: 
-  recorded_at: Mon, 26 Jun 2017 15:05:34 GMT
+  recorded_at: Tue, 27 Jun 2017 14:43:58 GMT
 recorded_with: VCR 3.0.3

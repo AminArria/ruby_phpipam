@@ -8,18 +8,18 @@ http_interactions:
       string: ''
     headers:
       Token:
-      - "=kx6R0w4KiKS0ogduPCmDwcG"
+      - xUjY_6V!1uD$zN.l6nsMXWGJ
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 26 Jun 2017 15:11:24 GMT
+      - Tue, 27 Jun 2017 14:43:58 GMT
       Server:
       - Apache/2.4.18 (Ubuntu)
       Set-Cookie:
-      - phpipam=3d5kf89gm9956bvavd6btgt1r5; expires=Tue, 27-Jun-2017 15:11:24 GMT;
+      - phpipam=15phla35gu28k9tldicsb23ac0; expires=Wed, 28-Jun-2017 14:43:58 GMT;
         Max-Age=86400; path=/; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
@@ -38,7 +38,7 @@ http_interactions:
         netmask":"255.255.255.0","Subnet wildcard":"0.0.0.255","Min host IP":"1.1.1.1","Max
         host IP":"1.1.1.254","Number of hosts":254,"Subnet Class":false}},"time":0.006}'
     http_version: 
-  recorded_at: Mon, 26 Jun 2017 15:11:24 GMT
+  recorded_at: Tue, 27 Jun 2017 14:43:58 GMT
 - request:
     method: get
     uri: http://phpipam.com/api/capacidad/subnets/9/addresses/
@@ -47,18 +47,18 @@ http_interactions:
       string: ''
     headers:
       Token:
-      - "=kx6R0w4KiKS0ogduPCmDwcG"
+      - xUjY_6V!1uD$zN.l6nsMXWGJ
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 26 Jun 2017 15:11:24 GMT
+      - Tue, 27 Jun 2017 14:43:58 GMT
       Server:
       - Apache/2.4.18 (Ubuntu)
       Set-Cookie:
-      - phpipam=sntevh5le7d4g1lmi0tgcl53v4; expires=Tue, 27-Jun-2017 15:11:24 GMT;
+      - phpipam=5jcbep8lffgnjjpdlsvrocjnt0; expires=Wed, 28-Jun-2017 14:43:58 GMT;
         Max-Age=86400; path=/; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
@@ -72,7 +72,7 @@ http_interactions:
       - application/json; charset=utf-8
     body:
       encoding: UTF-8
-      string: '{"code":200,"success":0,"message":"No addresses found","time":0.005}'
+      string: '{"code":200,"success":0,"message":"No addresses found","time":0.021}'
     http_version: 
-  recorded_at: Mon, 26 Jun 2017 15:11:24 GMT
+  recorded_at: Tue, 27 Jun 2017 14:43:58 GMT
 recorded_with: VCR 3.0.3

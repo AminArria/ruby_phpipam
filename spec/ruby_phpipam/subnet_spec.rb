@@ -43,4 +43,18 @@ RSpec.describe RubyPhpipam::Subnet do
     expect(subnet.subnet).to eq "1.1.1.0"
     expect(subnet.mask).to eq 24
   end
+
+  it 'returns subnet with usage instace variables set', :vcr do
+    subnet = RubyPhpipam::Subnet.get(9)
+    expect(subnet.used).to be_nil
+    expect(subnet.maxhosts).to be_nil
+    expect(subnet.freehosts).to be_nil
+    expect(subnet.freehosts_percent).to be_nil
+
+    subnet.usage!
+    expect(subnet.used).not_to be_nil
+    expect(subnet.maxhosts).not_to be_nil
+    expect(subnet.freehosts).not_to be_nil
+    expect(subnet.freehosts_percent).not_to be_nil
+  end
 end

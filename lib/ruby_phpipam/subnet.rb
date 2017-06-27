@@ -59,7 +59,7 @@ module RubyPhpipam
       end
     end
 
-    def usage
+    def usage!
       data = RubyPhpipam::Query.get("/subnets/#{id}/usage/")
 
       @used = RubyPhpipam::Helper.to_type(data[:used], :int)
