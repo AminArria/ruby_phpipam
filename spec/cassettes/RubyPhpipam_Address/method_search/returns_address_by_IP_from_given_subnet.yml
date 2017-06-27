@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://phpipam.com/api/capacidad/addresses/1.1.1.9/12/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Token:
+      - xUjY_6V!1uD$zN.l6nsMXWGJ
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 27 Jun 2017 19:09:57 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      Set-Cookie:
+      - phpipam=qcjcdpvg97gl07bq5bg1pb9f76; expires=Wed, 28-Jun-2017 19:09:57 GMT;
+        Max-Age=86400; path=/; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"code":200,"success":true,"data":{"id":"22","subnetId":"12","ip_addr":"16843017","is_gateway":null,"description":"","dns_name":"server2.cust1.local","mac":"","owner":"","state":"2","switch":"0","location":"0","port":null,"note":"","lastSeen":null,"excludePing":"0","PTRignore":"0","PTR":"0","firewallAddressObject":null,"editDate":"2017-06-27
+        14:34:08","ip":"1.1.1.9"},"time":0.006}'
+    http_version: 
+  recorded_at: Tue, 27 Jun 2017 19:09:57 GMT
+recorded_with: VCR 3.0.3

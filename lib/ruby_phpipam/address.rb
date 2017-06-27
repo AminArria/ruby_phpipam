@@ -38,6 +38,24 @@ module RubyPhpipam
       end
     end
 
+    def self.search(ip:nil, hostname:nil, subnetId:nil)
+      if !ip.nil?
+        if subnetId.nil?
+          addresses = RubyPhpipam::Query.get_array("/addresses/search/#{ip}/")
+        else
+          address = RubyPhpipam::Query.get("/addresses/#{ip}/#{subnetId}/")
+        end
+      else
+        addresses = RubyPhpipam::Query.get_array("/addresses/search_hostname/#{hostname}/")
+      end
+
+      return (address ? self.new(address) : nil) if subnetId
+
+      addresses.map do |address|
+        self.new(address)
+      end
+    end
+
     def online?
       RubyPhpipam::Address.ping(@id)
     end

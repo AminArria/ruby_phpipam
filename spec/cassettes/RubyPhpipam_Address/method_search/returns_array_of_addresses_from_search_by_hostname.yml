@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://phpipam.com/api/capacidad/addresses/search_hostname/server2.cust1.local/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Token:
+      - xUjY_6V!1uD$zN.l6nsMXWGJ
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 27 Jun 2017 19:13:22 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      Set-Cookie:
+      - phpipam=rratomfi5jcva19g1pmpsqoui5; expires=Wed, 28-Jun-2017 19:13:22 GMT;
+        Max-Age=86400; path=/; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '693'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"code":200,"success":true,"data":[{"id":"2","subnetId":"3","ip":"10.10.1.4","is_gateway":"0","description":"Server2","hostname":"server2.cust1.local","mac":null,"owner":null,"tag":"2","deviceId":null,"location":null,"port":null,"note":null,"lastSeen":"1970-01-01
+        00:00:01","excludePing":"0","PTRignore":"0","PTR":"0","firewallAddressObject":null,"editDate":null},{"id":"22","subnetId":"12","ip":"1.1.1.9","is_gateway":null,"description":"","hostname":"server2.cust1.local","mac":"","owner":"","tag":"2","deviceId":"0","location":"0","port":null,"note":"","lastSeen":null,"excludePing":"0","PTRignore":"0","PTR":"0","firewallAddressObject":null,"editDate":"2017-06-27
+        14:34:08"}],"time":0.113}'
+    http_version: 
+  recorded_at: Tue, 27 Jun 2017 19:13:22 GMT
+recorded_with: VCR 3.0.3
