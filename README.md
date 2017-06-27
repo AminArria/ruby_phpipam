@@ -13,9 +13,9 @@ gem 'ruby_phpipam'
 
 ```
 
-And then execute:
+Or execute:
 
-    $ bundle install
+    $ gem install ruby_phpipam
 
 
 ## Usage
