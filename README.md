@@ -65,9 +65,14 @@ all_subnets(mask)     Get all posible subnets (CIDR)      Array of strings
 
 #### Address
 ```
-self.get(id)      Get address by ID           Address object
-self.ping(id)     Check status of address     Boolean telling if address is reachable
-online?           Check status of address     Boolean telling if address is reachable
+self.get(id)                          Get address by ID             Address object
+self.get_by_tag(tagId)                Get addresses by tagId        Array of address objects
+self.ping(id)                         Check status of address       Boolean telling if address is reachable
+self.search(id, hostname, subnetId)   Searches for addresses by     Address object or array of address objects
+                                        IP (in a specific subnet
+                                        if given) or hostname
+self.first_free(subnetId)             Get first usable IP           String
+online?                               Check status of address       Boolean telling if address is reachable
 ```
 
 ## Pending API endpoints
@@ -98,14 +103,9 @@ DELETE  /api/my_app/subnets/{id}/permissions/             Removes all permission
 
 ### Addresses Endpoints
 ```
-GET     /api/my_app/addresses/{ip}/{subnetId}/              Returns address from subnet by ip address
-GET     /api/my_app/addresses/search/{ip}/                  Searches for addresses in database, returns multiple if found
-GET     /api/my_app/addresses/search_hostname/{hostname}/   Searches for addresses in database by hostname, returns multiple if found
-GET     /api/my_app/addresses/first_free/{subnetId}/        Returns first available address (subnetId can be provided with parameters)
 GET     /api/my_app/addresses/custom_fields/                Returns custom fields
 GET     /api/my_app/addresses/tags/                         Returns all tags
 GET     /api/my_app/addresses/tags/{id}/                    Returns specific tag
-GET     /api/my_app/addresses/tags/{id}/addresses/          Returns addresses for specific tag
 POST    /api/my_app/addresses/                              Creates new address
 POST    /api/my_app/addresses/first_free/{subnetId}/        Creates new address in subnets – first available (subnetId can be provided with parameters)
 PATCH   /api/my_app/addresses/{id}/                         Updates address
