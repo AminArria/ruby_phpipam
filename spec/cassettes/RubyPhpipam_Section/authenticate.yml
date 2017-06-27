@@ -14,18 +14,18 @@ http_interactions:
       User-Agent:
       - Ruby
       Authorization:
-      - Basic YmFkX3VzZXJuYW1lOmFtaW4uaXBhbQ==
+      - Basic YW1pbjEyOmFtaW4uaXBhbQ==
   response:
     status:
-      code: 500
-      message: Internal Server Error
+      code: 200
+      message: OK
     headers:
       Date:
-      - Tue, 27 Jun 2017 17:18:21 GMT
+      - Tue, 27 Jun 2017 17:18:26 GMT
       Server:
       - Apache/2.4.18 (Ubuntu)
       Set-Cookie:
-      - phpipam=d1uoj1qdolk1ce2m1lrhqkm7p3; expires=Wed, 28-Jun-2017 17:18:21 GMT;
+      - phpipam=0a50laqo1ibp4ohe24j0jkh3j6; expires=Wed, 28-Jun-2017 17:18:26 GMT;
         Max-Age=86400; path=/; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
@@ -34,14 +34,13 @@ http_interactions:
       Pragma:
       - no-cache
       Content-Length:
-      - '78'
-      Connection:
-      - close
+      - '116'
       Content-Type:
       - application/json; charset=utf-8
     body:
       encoding: UTF-8
-      string: '{"code":500,"success":0,"message":"Invalid username or password","time":0.171}'
+      string: '{"code":200,"success":true,"data":{"token":"xUjY_6V!1uD$zN.l6nsMXWGJ","expires":"2017-06-27
+        19:18:27"},"time":0.288}'
     http_version: 
-  recorded_at: Tue, 27 Jun 2017 17:18:21 GMT
+  recorded_at: Tue, 27 Jun 2017 17:18:27 GMT
 recorded_with: VCR 3.0.3

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://phpipam.com/api/capacidad/subnets/cidr/1.2.3.0/24/
+    uri: http://phpipam.com/api/capacidad/addresses/999/
     body:
       encoding: US-ASCII
       string: ''
@@ -11,15 +11,15 @@ http_interactions:
       - xUjY_6V!1uD$zN.l6nsMXWGJ
   response:
     status:
-      code: 200
-      message: OK
+      code: 404
+      message: Not Found
     headers:
       Date:
       - Tue, 27 Jun 2017 17:18:21 GMT
       Server:
       - Apache/2.4.18 (Ubuntu)
       Set-Cookie:
-      - phpipam=144fgo1v37tr703cihtj94eo31; expires=Wed, 28-Jun-2017 17:18:21 GMT;
+      - phpipam=5ufhdmueklmt0dkd594qaqrvh1; expires=Wed, 28-Jun-2017 17:18:21 GMT;
         Max-Age=86400; path=/; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
@@ -28,12 +28,12 @@ http_interactions:
       Pragma:
       - no-cache
       Content-Length:
-      - '66'
+      - '60'
       Content-Type:
       - application/json; charset=utf-8
     body:
       encoding: UTF-8
-      string: '{"code":200,"success":0,"message":"No subnets found","time":0.007}'
+      string: '{"code":404,"success":0,"message":"Invalid Id","time":0.006}'
     http_version: 
   recorded_at: Tue, 27 Jun 2017 17:18:21 GMT
 recorded_with: VCR 3.0.3

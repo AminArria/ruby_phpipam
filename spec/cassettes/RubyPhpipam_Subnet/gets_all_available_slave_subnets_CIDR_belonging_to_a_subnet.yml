@@ -15,11 +15,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 27 Jun 2017 17:18:21 GMT
+      - Tue, 27 Jun 2017 17:18:22 GMT
       Server:
       - Apache/2.4.18 (Ubuntu)
       Set-Cookie:
-      - phpipam=qb2n5on9tdd67kso2t70tfvhd3; expires=Wed, 28-Jun-2017 17:18:21 GMT;
+      - phpipam=12q7fl1j854a9p4m0kks8ibr24; expires=Wed, 28-Jun-2017 17:18:22 GMT;
         Max-Age=86400; path=/; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
@@ -41,7 +41,7 @@ http_interactions:
   recorded_at: Tue, 27 Jun 2017 17:18:22 GMT
 - request:
     method: get
-    uri: http://phpipam.com/api/capacidad/subnets/9/usage/
+    uri: http://phpipam.com/api/capacidad/subnets/9/all_subnets/28/
     body:
       encoding: US-ASCII
       string: ''
@@ -58,7 +58,7 @@ http_interactions:
       Server:
       - Apache/2.4.18 (Ubuntu)
       Set-Cookie:
-      - phpipam=ecf775hr2c1gvdsd0l22pfb0c1; expires=Wed, 28-Jun-2017 17:18:22 GMT;
+      - phpipam=lfqoigdodrf1aghtmn2126smv4; expires=Wed, 28-Jun-2017 17:18:22 GMT;
         Max-Age=86400; path=/; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
@@ -67,12 +67,12 @@ http_interactions:
       Pragma:
       - no-cache
       Content-Length:
-      - '142'
+      - '267'
       Content-Type:
       - application/json; charset=utf-8
     body:
       encoding: UTF-8
-      string: '{"code":200,"success":true,"data":{"used":"10","maxhosts":"256","freehosts":"246","freehosts_percent":96.09,"Used_percent":3.91},"time":0.008}'
+      string: '{"code":200,"success":true,"data":["1.1.1.16\/28","1.1.1.32\/28","1.1.1.48\/28","1.1.1.64\/28","1.1.1.80\/28","1.1.1.96\/28","1.1.1.112\/28","1.1.1.144\/28","1.1.1.160\/28","1.1.1.176\/28","1.1.1.192\/28","1.1.1.208\/28","1.1.1.224\/28","1.1.1.240\/28"],"time":0.004}'
     http_version: 
   recorded_at: Tue, 27 Jun 2017 17:18:22 GMT
 recorded_with: VCR 3.0.3

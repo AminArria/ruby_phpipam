@@ -15,11 +15,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 27 Jun 2017 17:18:21 GMT
+      - Tue, 27 Jun 2017 17:18:22 GMT
       Server:
       - Apache/2.4.18 (Ubuntu)
       Set-Cookie:
-      - phpipam=0vvhe3a23dk9gm9q4htqpads93; expires=Wed, 28-Jun-2017 17:18:21 GMT;
+      - phpipam=snfl4hd1i7f2qtv097bhugmbi7; expires=Wed, 28-Jun-2017 17:18:22 GMT;
         Max-Age=86400; path=/; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
@@ -37,12 +37,12 @@ http_interactions:
         2","linked_subnet":null,"firewallAddressObject":null,"vrfId":"0","masterSubnetId":"2","allowRequests":"1","vlanId":"0","showName":"1","device":"0","permissions":"{\"3\":\"1\",\"2\":\"2\"}","pingSubnet":"0","discoverSubnet":"0","DNSrecursive":"0","DNSrecords":"0","nameserverId":"0","scanAgent":null,"isFolder":"0","isFull":"0","tag":"2","threshold":"0","location":null,"editDate":null,"lastScan":null,"lastDiscovery":null,"custom_valor_1":null,"custom_numero":"0","calculation":{"Type":"IPv4","IP
         address":"\/","Network":"10.10.2.0","Broadcast":"10.10.2.255","Subnet bitmask":"24","Subnet
         netmask":"255.255.255.0","Subnet wildcard":"0.0.0.255","Min host IP":"10.10.2.1","Max
-        host IP":"10.10.2.254","Number of hosts":254,"Subnet Class":"private A"}},"time":0.003}'
+        host IP":"10.10.2.254","Number of hosts":254,"Subnet Class":"private A"}},"time":0.006}'
     http_version: 
-  recorded_at: Tue, 27 Jun 2017 17:18:21 GMT
+  recorded_at: Tue, 27 Jun 2017 17:18:22 GMT
 - request:
     method: get
-    uri: http://phpipam.com/api/capacidad/subnets/4/addresses/
+    uri: http://phpipam.com/api/capacidad/subnets/4/first_free/
     body:
       encoding: US-ASCII
       string: ''
@@ -55,11 +55,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 27 Jun 2017 17:18:21 GMT
+      - Tue, 27 Jun 2017 17:18:22 GMT
       Server:
       - Apache/2.4.18 (Ubuntu)
       Set-Cookie:
-      - phpipam=8o22dfm8sd1e8dhehkrfcipoq2; expires=Wed, 28-Jun-2017 17:18:21 GMT;
+      - phpipam=t7nttgbhgc0fh59cv2ftmfplf0; expires=Wed, 28-Jun-2017 17:18:22 GMT;
         Max-Age=86400; path=/; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
@@ -68,14 +68,12 @@ http_interactions:
       Pragma:
       - no-cache
       Content-Length:
-      - '692'
+      - '59'
       Content-Type:
       - application/json; charset=utf-8
     body:
       encoding: UTF-8
-      string: '{"code":200,"success":true,"data":[{"id":"7","subnetId":"4","ip":"10.10.2.10","is_gateway":"0","description":"Server1","hostname":"ser1.client2.local","mac":null,"owner":null,"tag":"2","deviceId":null,"location":null,"port":null,"note":null,"lastSeen":"1970-01-01
-        00:00:01","excludePing":"0","PTRignore":"0","PTR":"0","firewallAddressObject":null,"editDate":null},{"id":"6","subnetId":"4","ip":"10.10.2.254","is_gateway":"0","description":"Gateway","hostname":null,"mac":null,"owner":null,"tag":"2","deviceId":null,"location":null,"port":null,"note":null,"lastSeen":"1970-01-01
-        00:00:01","excludePing":"0","PTRignore":"0","PTR":"0","firewallAddressObject":null,"editDate":null}],"time":0.004}'
+      string: '{"code":200,"success":true,"data":"10.10.2.1","time":0.004}'
     http_version: 
-  recorded_at: Tue, 27 Jun 2017 17:18:21 GMT
+  recorded_at: Tue, 27 Jun 2017 17:18:22 GMT
 recorded_with: VCR 3.0.3

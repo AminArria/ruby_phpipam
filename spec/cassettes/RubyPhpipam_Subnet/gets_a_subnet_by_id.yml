@@ -15,11 +15,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 27 Jun 2017 14:43:58 GMT
+      - Tue, 27 Jun 2017 17:18:21 GMT
       Server:
       - Apache/2.4.18 (Ubuntu)
       Set-Cookie:
-      - phpipam=qa53f4r5lu5mn88t7dqj5p5qa1; expires=Wed, 28-Jun-2017 14:43:58 GMT;
+      - phpipam=8oml73ga907csrbf1ced2at6n2; expires=Wed, 28-Jun-2017 17:18:21 GMT;
         Max-Age=86400; path=/; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
@@ -36,7 +36,7 @@ http_interactions:
       string: '{"code":200,"success":true,"data":{"id":"9","subnet":"1.1.1.0","mask":"24","sectionId":"3","description":null,"linked_subnet":null,"firewallAddressObject":null,"vrfId":"0","masterSubnetId":"0","allowRequests":"0","vlanId":"0","showName":"0","device":"0","permissions":"[]","pingSubnet":"0","discoverSubnet":"0","DNSrecursive":"0","DNSrecords":"0","nameserverId":"0","scanAgent":"0","isFolder":"0","isFull":"0","tag":"2","threshold":"0","location":"0","editDate":null,"lastScan":null,"lastDiscovery":null,"custom_valor_1":null,"custom_numero":"0","calculation":{"Type":"IPv4","IP
         address":"\/","Network":"1.1.1.0","Broadcast":"1.1.1.255","Subnet bitmask":"24","Subnet
         netmask":"255.255.255.0","Subnet wildcard":"0.0.0.255","Min host IP":"1.1.1.1","Max
-        host IP":"1.1.1.254","Number of hosts":254,"Subnet Class":false}},"time":0.046}'
+        host IP":"1.1.1.254","Number of hosts":254,"Subnet Class":false}},"time":0.003}'
     http_version: 
-  recorded_at: Tue, 27 Jun 2017 14:43:58 GMT
+  recorded_at: Tue, 27 Jun 2017 17:18:21 GMT
 recorded_with: VCR 3.0.3
