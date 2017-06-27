@@ -25,12 +25,23 @@ module RubyPhpipam
 
     def validate_token!
       if @expires <= Time.now
-        data = RubyPhpipam::Query.get("/user/")
+        header = {
+          "token" => @token
+        }
 
-        if data[:expires] <= Time.now
+        response = HTTParty.get(RubyPhpipam.gen_url("/user/"), headers: header)
+
+        body = JSON.parse(response.body, symbolize_names: true)
+
+        unless body[:success] && body[:code] >= 200 && body[:code] < 400
+          raise RequestFailed.new(body[:code], body[:message])
+        end
+
+
+        if body[:data][:expires] <= Time.now
           # Pending re authentication
         else
-          @expires = data[:expires]
+          @expires = body[:ñdata][:expires]
         end
       end
     end
