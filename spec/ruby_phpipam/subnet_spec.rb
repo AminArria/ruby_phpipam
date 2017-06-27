@@ -2,8 +2,10 @@ require "spec_helper"
 
 RSpec.describe RubyPhpipam::Subnet do
   before :each do
-    load_configuration
-    RubyPhpipam.authenticate
+    VCR.use_cassette("RubyPhpipam_Subnet/authenticate") do
+      load_configuration
+      RubyPhpipam.authenticate
+    end
   end
 
   it "raises an error when subnet doesn't exist", :vcr do

@@ -2,8 +2,10 @@ require "spec_helper"
 
 RSpec.describe RubyPhpipam::Section do
   before :each do
-    load_configuration
-    RubyPhpipam.authenticate
+    VCR.use_cassette("RubyPhpipam_Section/authenticate") do
+      load_configuration
+      RubyPhpipam.authenticate
+    end
   end
 
   it "raises an error when section doesn't exist", :vcr do

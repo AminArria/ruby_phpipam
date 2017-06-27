@@ -2,8 +2,10 @@ require "spec_helper"
 
 RSpec.describe RubyPhpipam::Address do
   before :each do
-    load_configuration
-    RubyPhpipam.authenticate
+    VCR.use_cassette("RubyPhpipam_Address/authenticate") do
+      load_configuration
+      RubyPhpipam.authenticate
+    end
   end
 
   it "raises an error when address doesn't exist", :vcr do
