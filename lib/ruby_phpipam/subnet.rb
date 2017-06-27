@@ -89,7 +89,7 @@ module RubyPhpipam
     def first_free_ip
       # Should this raise an exception if no address available or return nil?
       # Currently it returns nil
-      data = RubyPhpipam::Query.get("/subnets/#{id}/first_free/")
+      RubyPhpipam::Query.get("/subnets/#{id}/first_free/")
     end
 
     def slaves
@@ -108,12 +108,13 @@ module RubyPhpipam
       end
     end
 
-    def first_subnet(mask)
-      RubyPhpipam::Query.get("/subnets/#{id}/first_subnet/#{mask}/")
+    def first_subnet(slave_mask)
+      # nil when no available subnet exists
+      RubyPhpipam::Query.get("/subnets/#{id}/first_subnet/#{slave_mask}/")
     end
 
-    def all_subnets(mask)
-      RubyPhpipam::Query.get_array("/subnets/#{id}/all_subnets/#{mask}/")
+    def all_subnets(slave_mask)
+      RubyPhpipam::Query.get_array("/subnets/#{id}/all_subnets/#{slave_mask}/")
     end
   end
 end
