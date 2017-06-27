@@ -1,4 +1,6 @@
 # ruby_phpipam
+[![Gem Version](https://badge.fury.io/rb/ruby_phpipam.svg)](https://badge.fury.io/rb/ruby_phpipam)
+[![Build Status](https://travis-ci.org/AminArria/ruby-phpipam.svg?branch=master)](https://travis-ci.org/AminArria/ruby-phpipam)
 
 **Important Note**: GET actions have highest priority for development, but feel free to make a PR for the others.
 
@@ -7,7 +9,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ruby_phpipam', git: 'git://github.com/AminArria/ruby-phpipam'
+gem 'ruby_phpipam'
 
 ```
 
@@ -35,7 +37,8 @@ Phpipam.authenticate
 ### API Calls
 In here you'll see the following:
 ```
-method_name()     What it does      What it returns
+instance_method()       What it does      What it returns
+self.class_method()     What it does      What it returns
 ```
 
 #### Section
@@ -62,7 +65,9 @@ all_subnets(mask)     Get all posible subnets (CIDR)      Array of strings
 
 #### Address
 ```
-self.get(id)      Get address by ID     Address object
+self.get(id)      Get address by ID           Address object
+self.ping(id)     Check status of address     Boolean telling if address is reachable
+online?           Check status of address     Boolean telling if address is reachable
 ```
 
 ## Pending API endpoints
@@ -93,7 +98,6 @@ DELETE  /api/my_app/subnets/{id}/permissions/             Removes all permission
 
 ### Addresses Endpoints
 ```
-GET     /api/my_app/addresses/{id}/ping/                    Checks address status
 GET     /api/my_app/addresses/{ip}/{subnetId}/              Returns address from subnet by ip address
 GET     /api/my_app/addresses/search/{ip}/                  Searches for addresses in database, returns multiple if found
 GET     /api/my_app/addresses/search_hostname/{hostname}/   Searches for addresses in database by hostname, returns multiple if found
