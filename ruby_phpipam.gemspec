@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Ruby wrapper for the phpipam API"
   spec.description   = "Ruby wrapper for the phpipam API"
-  spec.homepage      = "https://github.com/AminArria/ruby-phpipam"
+  spec.homepage      = "https://github.com/AminArria/ruby_phpipam"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
