@@ -1,6 +1,6 @@
 # ruby_phpipam
 [![Gem Version](https://badge.fury.io/rb/ruby_phpipam.svg)](https://badge.fury.io/rb/ruby_phpipam)
-[![Build Status](https://travis-ci.org/AminArria/ruby-phpipam.svg?branch=master)](https://travis-ci.org/AminArria/ruby-phpipam)
+[![Build Status](https://travis-ci.org/AminArria/ruby_phpipam.svg?branch=master)](https://travis-ci.org/AminArria/ruby_phpipam)
 
 **Important Note**: GET actions have highest priority for development, but feel free to make a PR for the others.
 
