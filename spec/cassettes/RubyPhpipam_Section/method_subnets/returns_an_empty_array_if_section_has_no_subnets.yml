@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://phpipam.com/api/capacidad/sections/Vacia/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Token:
+      - l1oNk3iMixvPENiG7gEjDkp8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 29 Jun 2017 14:45:03 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      Set-Cookie:
+      - phpipam=6oa8sorper19k0mu1vklt05rc1; expires=Fri, 30-Jun-2017 14:45:03 GMT;
+        Max-Age=86400; path=/; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '267'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"code":200,"success":true,"data":{"id":"4","name":"Vacia","description":null,"masterSection":"0","permissions":"[]","strictMode":"1","subnetOrdering":"default","order":null,"editDate":null,"showVLAN":"1","showVRF":"1","showSupernetOnly":"1","DNS":null},"time":0.005}'
+    http_version: 
+  recorded_at: Thu, 29 Jun 2017 14:45:02 GMT
+- request:
+    method: get
+    uri: http://phpipam.com/api/capacidad/sections/4/subnets/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Token:
+      - l1oNk3iMixvPENiG7gEjDkp8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 29 Jun 2017 14:45:03 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      Set-Cookie:
+      - phpipam=knbd6j930pvhk1qgsi8uqvre24; expires=Fri, 30-Jun-2017 14:45:03 GMT;
+        Max-Age=86400; path=/; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '66'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"code":200,"success":0,"message":"No subnets found","time":0.003}'
+    http_version: 
+  recorded_at: Thu, 29 Jun 2017 14:45:02 GMT
+recorded_with: VCR 3.0.3

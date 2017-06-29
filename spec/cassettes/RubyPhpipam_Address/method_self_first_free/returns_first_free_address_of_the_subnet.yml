@@ -1,31 +1,25 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: http://phpipam.com/api/capacidad/user/
+    method: get
+    uri: http://phpipam.com/api/capacidad/addresses/first_free/4/
     body:
-      encoding: UTF-8
+      encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Authorization:
-      - Basic YW1pbjEyOmFtaW4uaXBhbQ==
+      Token:
+      - l1oNk3iMixvPENiG7gEjDkp8
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Thu, 29 Jun 2017 14:54:09 GMT
+      - Thu, 29 Jun 2017 14:54:10 GMT
       Server:
       - Apache/2.4.18 (Ubuntu)
       Set-Cookie:
-      - phpipam=3ulb9mbr6447k03m4ilpltm863; expires=Fri, 30-Jun-2017 14:54:09 GMT;
+      - phpipam=7fqnjshuod9n1dped2micdsmq5; expires=Fri, 30-Jun-2017 14:54:10 GMT;
         Max-Age=86400; path=/; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
@@ -34,13 +28,12 @@ http_interactions:
       Pragma:
       - no-cache
       Content-Length:
-      - '116'
+      - '59'
       Content-Type:
       - application/json; charset=utf-8
     body:
       encoding: UTF-8
-      string: '{"code":200,"success":true,"data":{"token":"l1oNk3iMixvPENiG7gEjDkp8","expires":"2017-06-29
-        16:54:10"},"time":0.259}'
+      string: '{"code":200,"success":true,"data":"10.10.2.1","time":0.004}'
     http_version: 
   recorded_at: Thu, 29 Jun 2017 14:54:09 GMT
 recorded_with: VCR 3.0.3

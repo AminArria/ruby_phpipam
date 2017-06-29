@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://phpipam.com/api/capacidad/sections/Probando/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Token:
+      - l1oNk3iMixvPENiG7gEjDkp8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 29 Jun 2017 14:45:03 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      Set-Cookie:
+      - phpipam=c7ahk54in1a1t0uauniiojtc93; expires=Fri, 30-Jun-2017 14:45:03 GMT;
+        Max-Age=86400; path=/; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '270'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"code":200,"success":true,"data":{"id":"3","name":"Probando","description":null,"masterSection":"0","permissions":"[]","strictMode":"1","subnetOrdering":"default","order":null,"editDate":null,"showVLAN":"1","showVRF":"1","showSupernetOnly":"1","DNS":null},"time":0.003}'
+    http_version: 
+  recorded_at: Thu, 29 Jun 2017 14:45:02 GMT
+- request:
+    method: get
+    uri: http://phpipam.com/api/capacidad/sections/3/subnets/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Token:
+      - l1oNk3iMixvPENiG7gEjDkp8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 29 Jun 2017 14:45:03 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      Set-Cookie:
+      - phpipam=h7m7laqkpo3ooeistr67gj4lo6; expires=Fri, 30-Jun-2017 14:45:03 GMT;
+        Max-Age=86400; path=/; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '3318'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"code":200,"success":true,"data":[{"id":"9","subnet":"1.1.1.0","mask":"24","sectionId":"3","description":null,"linked_subnet":null,"firewallAddressObject":null,"vrfId":"0","masterSubnetId":"0","allowRequests":"0","vlanId":"0","showName":"0","device":"0","permissions":"[]","pingSubnet":"0","discoverSubnet":"0","DNSrecursive":"0","DNSrecords":"0","nameserverId":"0","scanAgent":"0","isFolder":"0","isFull":"0","tag":"2","threshold":"0","location":"0","editDate":null,"lastScan":null,"lastDiscovery":null,"custom_valor_1":null,"custom_numero":"0","usage":{"used":"10","maxhosts":"256","freehosts":"246","freehosts_percent":96.09,"Used_percent":3.91}},{"id":"10","subnet":"1.1.1.0","mask":"30","sectionId":"3","description":null,"linked_subnet":null,"firewallAddressObject":null,"vrfId":"0","masterSubnetId":"9","allowRequests":"0","vlanId":"0","showName":"0","device":"0","permissions":"[]","pingSubnet":"0","discoverSubnet":"0","DNSrecursive":"0","DNSrecords":"0","nameserverId":"0","scanAgent":"0","isFolder":"0","isFull":"0","tag":"2","threshold":"0","location":"0","editDate":null,"lastScan":null,"lastDiscovery":null,"custom_valor_1":null,"custom_numero":"0","usage":{"used":"0","maxhosts":"2","freehosts":"2","freehosts_percent":100,"Offline_percent":0,"Used_percent":0,"Reserved_percent":0,"DHCP_percent":0,"New_percent":0}},{"id":"11","subnet":"1.1.1.8","mask":"29","sectionId":"3","description":null,"linked_subnet":null,"firewallAddressObject":null,"vrfId":"0","masterSubnetId":"9","allowRequests":"0","vlanId":"0","showName":"0","device":"0","permissions":"[]","pingSubnet":"0","discoverSubnet":"0","DNSrecursive":"0","DNSrecords":"0","nameserverId":"0","scanAgent":"0","isFolder":"0","isFull":"0","tag":"2","threshold":"0","location":"0","editDate":null,"lastScan":null,"lastDiscovery":null,"custom_valor_1":null,"custom_numero":"0","usage":{"used":"6","maxhosts":"8","freehosts":"2","freehosts_percent":25,"Used_percent":75}},{"id":"12","subnet":"1.1.1.8","mask":"30","sectionId":"3","description":null,"linked_subnet":null,"firewallAddressObject":null,"vrfId":"0","masterSubnetId":"11","allowRequests":"0","vlanId":"0","showName":"0","device":"0","permissions":"[]","pingSubnet":"0","discoverSubnet":"0","DNSrecursive":"0","DNSrecords":"0","nameserverId":"0","scanAgent":"0","isFolder":"0","isFull":"0","tag":"2","threshold":"0","location":"0","editDate":null,"lastScan":null,"lastDiscovery":null,"custom_valor_1":null,"custom_numero":"0","usage":{"used":"2","maxhosts":"2","freehosts":"0","freehosts_percent":0,"Offline_percent":0,"Used_percent":100,"Reserved_percent":0,"DHCP_percent":0,"New_percent":0}},{"id":"13","subnet":"1.1.1.128","mask":"32","sectionId":"3","description":null,"linked_subnet":null,"firewallAddressObject":null,"vrfId":"0","masterSubnetId":"9","allowRequests":"0","vlanId":"0","showName":"0","device":"0","permissions":"[]","pingSubnet":"0","discoverSubnet":"0","DNSrecursive":"0","DNSrecords":"0","nameserverId":"0","scanAgent":"0","isFolder":"0","isFull":"0","tag":"2","threshold":"0","location":"0","editDate":null,"lastScan":null,"lastDiscovery":null,"custom_valor_1":null,"custom_numero":"0","usage":{"used":"0","maxhosts":"1","freehosts":"1","freehosts_percent":100,"Offline_percent":0,"Used_percent":0,"Reserved_percent":0,"DHCP_percent":0,"New_percent":0}}],"time":0.137}'
+    http_version: 
+  recorded_at: Thu, 29 Jun 2017 14:45:02 GMT
+recorded_with: VCR 3.0.3

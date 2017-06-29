@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://phpipam.com/api/capacidad/subnets/999/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Token:
+      - l1oNk3iMixvPENiG7gEjDkp8
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Thu, 29 Jun 2017 14:52:28 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      Set-Cookie:
+      - phpipam=ou0r9v6eqv0ct4sir87f5si5t7; expires=Fri, 30-Jun-2017 14:52:28 GMT;
+        Max-Age=86400; path=/; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '73'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"code":400,"success":0,"message":"Invalid subnet Id (999)","time":0.006}'
+    http_version: 
+  recorded_at: Thu, 29 Jun 2017 14:52:27 GMT
+recorded_with: VCR 3.0.3

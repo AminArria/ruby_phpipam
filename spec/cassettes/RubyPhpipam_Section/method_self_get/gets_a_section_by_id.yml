@@ -1,31 +1,25 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: http://phpipam.com/api/capacidad/user/
+    method: get
+    uri: http://phpipam.com/api/capacidad/sections/3/
     body:
-      encoding: UTF-8
+      encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Authorization:
-      - Basic YW1pbjEyOmFtaW4uaXBhbQ==
+      Token:
+      - l1oNk3iMixvPENiG7gEjDkp8
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Thu, 29 Jun 2017 14:45:02 GMT
+      - Thu, 29 Jun 2017 14:45:03 GMT
       Server:
       - Apache/2.4.18 (Ubuntu)
       Set-Cookie:
-      - phpipam=c25rbhsimq28du1p7ajv1oqlt7; expires=Fri, 30-Jun-2017 14:45:03 GMT;
+      - phpipam=ce3hnq4fmodlao3k72tdhjqp41; expires=Fri, 30-Jun-2017 14:45:03 GMT;
         Max-Age=86400; path=/; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
@@ -34,13 +28,12 @@ http_interactions:
       Pragma:
       - no-cache
       Content-Length:
-      - '116'
+      - '270'
       Content-Type:
       - application/json; charset=utf-8
     body:
       encoding: UTF-8
-      string: '{"code":200,"success":true,"data":{"token":"l1oNk3iMixvPENiG7gEjDkp8","expires":"2017-06-29
-        16:45:03"},"time":0.294}'
+      string: '{"code":200,"success":true,"data":{"id":"3","name":"Probando","description":null,"masterSection":"0","permissions":"[]","strictMode":"1","subnetOrdering":"default","order":null,"editDate":null,"showVLAN":"1","showVRF":"1","showSupernetOnly":"1","DNS":null},"time":0.013}'
     http_version: 
   recorded_at: Thu, 29 Jun 2017 14:45:02 GMT
 recorded_with: VCR 3.0.3
