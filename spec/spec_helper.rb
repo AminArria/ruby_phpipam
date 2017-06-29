@@ -1,6 +1,7 @@
 require "bundler/setup"
 
 require 'webmock/rspec'
+require "timecop"
 require 'vcr'
 require "dotenv"
 Dotenv.load

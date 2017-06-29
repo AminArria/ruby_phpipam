@@ -3,23 +3,26 @@ require "spec_helper"
 RSpec.describe RubyPhpipam::Address do
   before :each do
     VCR.use_cassette("RubyPhpipam_Address/authenticate") do
+      Timecop.freeze(VCR.current_cassette.originally_recorded_at || Time.now)
       load_configuration
       RubyPhpipam.authenticate
     end
   end
 
-  it "raises an error when address doesn't exist", :vcr do
-    expect {
-      RubyPhpipam::Address.get(999)
-    }.to raise_error(RubyPhpipam::RequestFailed)
+  context "method self.get" do
+    it "raises an error when address doesn't exist", :vcr do
+      expect {
+        RubyPhpipam::Address.get(999)
+      }.to raise_error(RubyPhpipam::RequestFailed)
+    end
+
+    it 'gets a address by id', :vcr do
+      address = RubyPhpipam::Address.get(9)
+      expect(address.id).to eq 9
+    end
   end
 
-  it 'gets a address by id', :vcr do
-    address = RubyPhpipam::Address.get(9)
-    expect(address.id).to eq 9
-  end
-
-  context "method search" do
+  context "method self.search" do
     it 'returns nil if no address exists in given subnet', :vcr do
       address = RubyPhpipam::Address.search(ip:"1.1.1.1", subnetId:12)
       expect(address).to be_nil
@@ -48,7 +51,7 @@ RSpec.describe RubyPhpipam::Address do
     end
   end
 
-  context "self.first_free" do
+  context "method self.first_free" do
     it 'returns nil if there is no free address in the subnet', :vcr do
       free_ip = RubyPhpipam::Address.first_free(12)
       expect(free_ip).to be_nil
@@ -60,7 +63,7 @@ RSpec.describe RubyPhpipam::Address do
     end
   end
 
-  context "self.get_by_tag" do
+  context "method self.get_by_tag" do
     it 'raises an error if tag ID does not exist', :vcr do
       expect {
         RubyPhpipam::Address.get_by_tag(948)
