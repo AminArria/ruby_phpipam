@@ -4,11 +4,13 @@ module RubyPhpipam
 
     def initialize
       response = HTTParty.post(RubyPhpipam.gen_url("/user/"),
-          { basic_auth: { username: RubyPhpipam.configuration.username,
-                         password: RubyPhpipam.configuration.password
-                        }
+        {
+          basic_auth: {
+            username: RubyPhpipam.configuration.username,
+            password: RubyPhpipam.configuration.password
           }
-        )
+        }
+      )
 
       body = JSON.parse(response.body, symbolize_names: true)
       unless body[:message].nil?
