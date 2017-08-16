@@ -22,7 +22,7 @@ Or execute:
 
 ### Configuration
 ```ruby
-Phpipam.configure do |config|
+RubyPhpipam.configure do |config|
   config.base_url = "http://my.phpipam.server/api/my_app"
   config.username = "username"
   config.password = "password"
@@ -31,7 +31,7 @@ end
 
 ### Authenticating
 ```ruby
-Phpipam.authenticate
+RubyPhpipam.authenticate
 ```
 
 ### API Calls
@@ -76,7 +76,7 @@ online?                               Check status of address       Boolean tell
 ```
 
 ## Pending API endpoints
-This are endpoints that aren't standarized into a method and a parsed response. You can still call them through ```Phpipam::Query.get(...)``` and get the raw response.
+This are endpoints that aren't standarized into a method and a parsed response. You can still call them through ```RubyPhpipam::Query.get(...)``` and get the raw response.
 
 ### Sections Endpoints
 ```
