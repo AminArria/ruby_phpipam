@@ -3,3 +3,8 @@ language: ruby
 rvm:
   - 2.4.1
 before_install: gem install bundler -v 1.14.6
+
+env:
+  - base_url: http://phpipam.com/api/capacidad
+  - username: amin12
+  - password: amin.ipam
