@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://phpipam.com/api/capacidad/vlan/4/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Token:
+      - WIJI4IyyMHe4IxfNe8IKA7qb
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 01 Jan 2018 22:28:24 GMT
+      Server:
+      - Apache/2.4.7 (Ubuntu)
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.22
+      Set-Cookie:
+      - phpipam=68150k8tfi40fb7sp8c31c48s7; expires=Tue, 02-Jan-2018 22:28:24 GMT;
+        Max-Age=86400; path=/; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '164'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"code":200,"success":true,"data":{"vlanId":"4","domainId":"1","name":"Otra
+        13","number":"1","description":"Probando numero repetido","editDate":null},"time":0.004}'
+    http_version: 
+  recorded_at: Mon, 01 Jan 2018 22:28:24 GMT
+- request:
+    method: get
+    uri: http://phpipam.com/api/capacidad/vlan/4/subnets/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Token:
+      - WIJI4IyyMHe4IxfNe8IKA7qb
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 01 Jan 2018 22:28:24 GMT
+      Server:
+      - Apache/2.4.7 (Ubuntu)
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.22
+      Set-Cookie:
+      - phpipam=368ak7nor97eeuuivrlm7gasr4; expires=Tue, 02-Jan-2018 22:28:24 GMT;
+        Max-Age=86400; path=/; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '580'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"code":200,"success":true,"data":[{"id":"9","subnet":"159.90.9.0","mask":"24","sectionId":"1","description":null,"firewallAddressObject":null,"vrfId":"0","masterSubnetId":"0","allowRequests":"0","vlanId":"4","showName":"0","device":"0","permissions":"{\"3\":\"1\",\"2\":\"2\"}","pingSubnet":"0","discoverSubnet":"0","DNSrecursive":"0","nameserverId":"0","DNSrecords":"0","scanAgent":"0","isFolder":"0","isFull":"0","tag":"2","editDate":"2018-01-01
+        18:17:00","threshold":"0","linked_subnet":null,"location":"0","lastScan":null,"lastDiscovery":null,"resolveDNS":"0"}],"time":0.007}'
+    http_version: 
+  recorded_at: Mon, 01 Jan 2018 22:28:24 GMT
+recorded_with: VCR 4.0.0

@@ -75,6 +75,15 @@ self.first_free(subnetId)             Get first usable IP           String
 online?                               Check status of address       Boolean telling if address is reachable
 ```
 
+#### VlAN
+```
+self.get_all                    Get all VLANs                        Array of VLAN objects
+self.get(id)                    Get VLAN by ID                       VLAN
+self.search(number)             Searches for VLAN with number        Array of vlan objects
+self.subnets(sectionId=nil)     Get subnets belonging to VLAN,
+                                  filtered by SectionId if given     Array of subnet objects
+```
+
 ## Pending API endpoints
 This are endpoints that aren't standarized into a method and a parsed response. You can still call them through ```RubyPhpipam::Query.get(...)``` and get the raw response.
 
@@ -115,12 +124,7 @@ DELETE  /api/my_app/addresses/{ip}/{subnetId}/              Deletes address by I
 
 ### VLAN Endpoints
 ```
-GET     /api/my_app/vlan/                                 Returns all Vlans
-GET     /api/my_app/vlan/{id}/                            Returns specific Vlan
-GET     /api/my_app/vlan/{id}/subnets/                    Returns all subnets attached tovlan
-GET     /api/my_app/vlan/{id}/subnets/{sectionId}/        Returns all subnets attached to vlan in specific section
 GET     /api/my_app/vlan/{id}/custom_fields/              Returns custom VLAN fields
-GET     /api/my_app/vlan/{id}/search/{number}/            Searches for VLAN
 POST    /api/my_app/vlan/                                 Creates new VLAN
 PATCH   /api/my_app/vlan/                                 Updates VLAN
 DELETE  /api/my_app/vlan/                                 Deletes VLAN
